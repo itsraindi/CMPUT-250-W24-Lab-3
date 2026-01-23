@@ -5,7 +5,7 @@ using UnityEngine;
 public class DVDLogo : MonoBehaviour
 {
     // Speed it moves at (✅ faster)
-    public float speed = 6;
+    public float speed = 2;
 
     // Bounds of the screen
     public float X_Max = 6, Y_Max = 5;
@@ -13,11 +13,8 @@ public class DVDLogo : MonoBehaviour
     // Current direction
     private Vector3 direction;
 
-
-
     void Start()
     {
-       
 
         // Randomly initialize direction
         direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
@@ -31,7 +28,6 @@ public class DVDLogo : MonoBehaviour
         Camera.main.backgroundColor = Random.ColorHSV(0f, 1f, 0.6f, 1f, 0.6f, 1f);
     }
     }
-
 
     private void FlipDirectionX()
     {
