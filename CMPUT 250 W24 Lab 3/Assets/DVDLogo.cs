@@ -5,21 +5,19 @@ using UnityEngine;
 public class DVDLogo : MonoBehaviour
 {
     // Speed it moves at (✅ faster)
-    public float speed = 80f;
+    public float speed = 6;
 
     // Bounds of the screen
-    public float X_Max = 3, Y_Max = 2;
+    public float X_Max = 6, Y_Max = 5;
 
     // Current direction
     private Vector3 direction;
 
-    // For color change on bounce
-    private SpriteRenderer sr;
+
 
     void Start()
     {
-        // grab SpriteRenderer 
-        sr = GetComponent<SpriteRenderer>();
+       
 
         // Randomly initialize direction
         direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
@@ -28,12 +26,12 @@ public class DVDLogo : MonoBehaviour
 
     private void RandomizeColor()
     {
-        // change color if we have a SpriteRenderer
-        if (sr != null)
-        {
-            sr.color = Random.ColorHSV(0f, 1f, 0.8f, 1f, 0.8f, 1f);
-        }
+    if (Camera.main != null)
+    {
+        Camera.main.backgroundColor = Random.ColorHSV(0f, 1f, 0.6f, 1f, 0.6f, 1f);
     }
+    }
+
 
     private void FlipDirectionX()
     {
